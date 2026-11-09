@@ -1,0 +1,43 @@
+{
+  "name": "@alcoholl/pricing-evaluator",
+  "version": "1.0.0",
+  "description": "Interactive pricing evaluator for DeepSeek Harness: pick online/offline business mode, enter costs, and get a realistic profit-maximizing price with price–volume charts.",
+  "keywords": [
+    "pricing",
+    "pricing-evaluator",
+    "business",
+    "profit",
+    "dsh",
+    "deepseek-harness",
+    "plugin"
+  ],
+  "author": "alcoholl",
+  "license": "MIT",
+  "homepage": "https://github.com/Alcoholicc/pricing-evaluator#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alcoholicc/pricing-evaluator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alcoholicc/pricing-evaluator/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-layout"]
+    }
+  }
+}

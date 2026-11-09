@@ -1,0 +1,3 @@
+- insert:
+    - id: pricing-evaluator
+      name: '@alcoholl/pricing-evaluator'
